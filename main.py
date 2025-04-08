@@ -5,9 +5,8 @@ import sys
 
 # new function called get_book_text. It takes a filepath as input and returns the contents of the file as a string.
 def get_book_text(path_to_file):
-    with open(path_to_file) as f:
-        file_contents = f.read()
-        return file_contents
+    with open(path_to_file,"r", encoding="utf-8") as f:
+        return f.read()
 
 # Message to Print
 def formatted(path_to_file):
@@ -25,6 +24,7 @@ def formatted(path_to_file):
 
 # a main function that uses get_book_text with the relative path to your frankenstein.txt file to print the entire contents of the book to the console.
 def main():
+    """This is Main Function"""
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
@@ -33,6 +33,6 @@ def main():
         filepath = ' '.join(arguments)
         formatted(filepath)
 
-
+if __name__ == "__main__":
 # call main
-main()
+    main()
