@@ -1,7 +1,7 @@
-#  accepts the text from the book as a string, and returns the number of words in the string.
 def get_num_words(path_to_file):
+    """Returns the Number of Words in the file"""
     try:
-        with open(path_to_file, 'r') as file:
+        with open(path_to_file,"r", encoding="utf-8") as file:
             content = file.read()
             words = content.split()
             word_count = len(words)
@@ -10,10 +10,10 @@ def get_num_words(path_to_file):
         print(f"File '{path_to_file}' not found.")
         return 0
 
-# takes the text from the book as a string, and returns the number of times each character, (including symbols and spaces), appears in the string.
 def get_num_chars(path_to_file):
+    """Returns the Number of Characters in the file."""
     try:
-        with open(path_to_file, 'r') as file:
+        with open(path_to_file,"r", encoding="utf-8") as file:
             content = file.read()
             lower = content.lower()
             counts = {}
@@ -24,10 +24,10 @@ def get_num_chars(path_to_file):
         print(f"File '{path_to_file}' not found.")
         return 0
     
-# takes the dictionary of characters and their counts and returns a sorted list of dictionaries.
 def sort_characters(path_to_file):
+    """Returns the Number of Characters in the file, sorted by amount"""
     try:
-        with open(path_to_file, 'r') as file:
+        with open(path_to_file,"r", encoding="utf-8") as file:
             content = file.read()
             lower = content.lower()
             counts = {}
@@ -40,4 +40,8 @@ def sort_characters(path_to_file):
         print(f"File '{path_to_file}' not found.")
         return 0
 
+def get_book_text(path_to_file):
+    """Returns the contents of the file as a string"""
+    with open(path_to_file,"r", encoding="utf-8") as f:
+        return f.read()
 
